@@ -97,6 +97,30 @@ src/
 
 ---
 
+## Environment variables
+
+Use these when deploying or running in production.
+
+### Backend (Render / Docker)
+
+| Variable       | Required | Default | Description |
+|----------------|----------|---------|-------------|
+| `PORT`         | No       | `4000`  | Render sets this automatically. For Docker, set if you use a different port. |
+| `CORS_ORIGIN`  | Yes*     | —       | Frontend origin allowed by CORS, e.g. `https://your-app.vercel.app`. Use `*` only for quick local testing. |
+
+\* Required in production so the browser allows requests from your Vercel app.
+
+### Frontend (Vercel)
+
+| Variable           | Required | Description |
+|--------------------|----------|-------------|
+| `VITE_API_URL`     | Yes      | Backend REST base URL (no trailing slash), e.g. `https://live-bidding-api.onrender.com`. |
+| `VITE_SOCKET_URL`  | Yes      | Backend URL for Socket.io. Use the same URL as the API, e.g. `https://live-bidding-api.onrender.com`. |
+
+These are read at **build time** by Vite. After changing them in Vercel, trigger a new deploy.
+
+---
+
 ## Deployment
 
 ### Backend (Render)
