@@ -12,10 +12,17 @@ const PORT = Number(process.env.PORT) || 4000;
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: { origin: process.env.CORS_ORIGIN || true, credentials: true },
-  pingTimeout: 60000,
-  pingInterval: 25000,
+  cors: {
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://live-bidding-platform-theta.vercel.app"
+    ],
+    methods: ["GET", "POST"],
+    credentials: true
+  }
 });
+
 
 registerBidHandler(io);
 
