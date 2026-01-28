@@ -1,0 +1,38 @@
+:root {
+  --bg: #0d0f14;
+  --surface: #161a22;
+  --surface-hover: #1c212b;
+  --border: #2a3140;
+  --text: #e6e9f0;
+  --text-muted: #8b92a6;
+  --accent: #00d4aa;
+  --accent-dim: #00a88a;
+  --win: #00d4aa;
+  --outbid: #ff6b6b;
+  --flash: rgba(0, 212, 170, 0.35);
+  --radius: 12px;
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@keyframes flash {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

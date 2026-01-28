@@ -1,0 +1,12 @@
+# Local dev: backend only. Frontend runs via `npm run dev` in ./frontend.
+# Backend: http://localhost:4000
+# Frontend (run separately): npm run dev in frontend/ → http://localhost:3000 with proxy to :4000
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "4000:4000"
+    environment:
+      - NODE_ENV=development
+      - PORT=4000
+      - CORS_ORIGIN=*
