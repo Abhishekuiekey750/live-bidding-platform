@@ -8,10 +8,23 @@ import itemsRouter from './routes/items.js';
 
 const app = express();
 
+const allowedOrigins = [
+  "http://localhost:3000",
+  "http://localhost:5173",
+  "https://live-bidding-platform-theta.vercel.app"
+];
+
 app.use(cors({
-  origin: process.env.CORS_ORIGIN || true,
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+  credentials: true
 }));
+
 app.use(express.json());
 
 app.get('/health', (req, res) => res.json({ ok: true, ts: new Date().toISOString() }));
