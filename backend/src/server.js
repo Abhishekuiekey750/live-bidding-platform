@@ -6,6 +6,7 @@ import { Server } from 'socket.io';
 import app from './app.js';
 import { registerBidHandler } from './sockets/bidHandler.js';
 import { logger } from './utils/logger.js';
+// force rebuild
 
 const PORT = process.env.PORT;
 
@@ -25,6 +26,8 @@ const io = new Server(server, {
 server.listen(PORT, "0.0.0.0", () => {
   console.log("Server listening on port", PORT);
 });
+
+console.log("BOOT VERSION 2");
 
 registerBidHandler(io);
 
