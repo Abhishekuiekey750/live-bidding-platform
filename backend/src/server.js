@@ -7,7 +7,7 @@ import app from './app.js';
 import { registerBidHandler } from './sockets/bidHandler.js';
 import { logger } from './utils/logger.js';
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT;
 
 const server = http.createServer(app);
 
