@@ -7,7 +7,7 @@ Real-time auction platform where users place bids in the final seconds. Server-a
 - **Backend:** Node.js, Express, Socket.io
 - **Frontend:** React 18 (hooks), Vite
 - **State sync:** Server time and bids are the single source of truth
-- **Deployment:** Backend on [Render](https://render.com), Frontend on [Vercel](https://vercel.com)
+- **Deployment:** Backend on [Railway](https://grand-gentleness-production-cd86.up.railway.app), Frontend on [Vercel](https://live-bidding-platform-theta.vercel.app)
 
 ---
 
@@ -26,7 +26,7 @@ npm install
 npm run dev
 ```
 
-Runs at **http://localhost:4000**.
+Runs at **http://localhost:8080**.
 
 ### Frontend (local)
 
@@ -44,7 +44,7 @@ Runs at **http://localhost:3000** and proxies `/api` and Socket.io to the backen
 docker compose up --build
 ```
 
-Backend at **http://localhost:4000**. Run the frontend locally as above and set proxy to `http://localhost:4000` (default in Vite config).
+Backend at **http://localhost:8080**. Run the frontend locally as above and set proxy to `http://localhost:8080` (default in Vite config).
 
 ---
 
