@@ -7,7 +7,7 @@ Real-time auction platform where users place bids in the final seconds. Server-a
 - **Backend:** Node.js, Express, Socket.io
 - **Frontend:** React 18 (hooks), Vite
 - **State sync:** Server time and bids are the single source of truth
-- **Deployment:** Backend on [Railway](https://grand-gentleness-production-cd86.up.railway.app), Frontend on [Vercel](https://live-bidding-platform-theta.vercel.app)
+- **Deployment:** Backend on [Railway](https://grand-gentleness-production-cd86.up.railway.app/health), Frontend on [Vercel](https://live-bidding-platform-theta.vercel.app)
 
 ---
 
