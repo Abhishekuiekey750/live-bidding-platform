@@ -7,9 +7,13 @@ import app from './app.js';
 import { registerBidHandler } from './sockets/bidHandler.js';
 import { logger } from './utils/logger.js';
 
-const PORT = Number(process.env.PORT) || 4000;
+const PORT = process.env.PORT || 8080;
 
 const server = http.createServer(app);
+
+
+
+
 
 const io = new Server(server, {
   cors: {
@@ -18,7 +22,9 @@ const io = new Server(server, {
   }
 });
 
-
+server.listen(PORT, "0.0.0.0", () => {
+  console.log("Server listening on port", PORT);
+});
 
 registerBidHandler(io);
 
